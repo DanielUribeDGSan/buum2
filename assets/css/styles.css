@@ -1665,7 +1665,7 @@ a.web-site {
 
   html,
   body {
-    width: 106% !important;
+    width: 100% !important;
     height: 100%;
   }
 }
