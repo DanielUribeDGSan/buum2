@@ -241,13 +241,3 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
   //EFECTO DESKTOP ESTACIONES\\  ----------------------------------------------------------------------------
 }
-
-
-$(document).ready(function() {
-  $(document).keydown(function(event) {
-    if (event.ctrlKey == true && (event.which == "107" || event.which == "109")) {
-      alert("disabling zooming ! ");
-      event.preventDefault();
-    }
-  });
-})
