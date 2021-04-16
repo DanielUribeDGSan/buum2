@@ -1,0 +1,1671 @@
+@font-face {
+  font-family: 'Helvetica 65 Medium';
+  src: url('../fonts/HelveticaNeue-Medium.woff2') format('woff2'), url('../fonts/HelveticaNeue-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica 55 Roman';
+  src: url('../fonts/HelveticaNeue-Roman.woff2') format('woff2'), url('../fonts/HelveticaNeue-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica 36 Thin italic';
+  src: url("../fonts/HELVETICA36THINITALIC.TTF");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.f-35 {
+  font-family: 'Helvetica 36 Thin italic' !important;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: table;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  max-width: 1600px;
+  margin: auto;
+}
+
+header {
+  padding-top: 32px;
+  margin-bottom: 78px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+header .flex {
+  justify-content: space-between;
+  /*align-items: center;*/
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+header.barda-menu {
+  background: #fff;
+  padding-bottom: 20px;
+}
+
+nav {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  transition: all .3s ease;
+  visibility: hidden;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 9;
+}
+
+header .hamburgesa-blanca::after,
+header .hamburgesa-blanca::before {
+  background-color: #fff;
+}
+
+header .container a figure img.logo-home__n,
+header .container a figure img.logo-home__b {
+  display: none;
+}
+
+nav.active {
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+}
+
+nav.active span.close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  display: block;
+  cursor: pointer;
+  color: #D24D39;
+}
+
+header nav .close {
+  display: none;
+}
+
+header nav a {
+  margin-right: 32px;
+  color: #828282;
+  font-family: "Helvetica 65 Medium";
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 100px;
+}
+
+.burger {
+  width: 52px;
+  height: 52px;
+  border-radius: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 13px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 90%;
+  height: 2px;
+  background: #D24D39;
+  display: block;
+  margin-bottom: 6px;
+  text-align: right;
+}
+
+.burger span:nth-child(2) {
+  width: 90%;
+}
+
+ul {
+  display: none;
+}
+
+/* EFECTO TEMPORAL */
+.efect-mobile {
+  width: 0.1px;
+  height: 0.1px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  mix-blend-mode: difference;
+  transition: width 1s, height 1s, border-radius 1s;
+  outline: none;
+  user-select: none;
+}
+
+.efect-mobile.efect-active {
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  z-index: -1;
+  border-radius: 0;
+}
+
+/* EFECTO TEMPORAL */
+/* SECCION 1 */
+section.logo_titulo .container {
+  position: relative;
+  clip-path: polygon(100% 0px, 0px 0px, -2px 92.56%, 0.83% 92.26%, 1.83% 91.9%, 2.92% 91.53%, 4.33% 91.09%, 5.75% 90.71%, 7.25% 90.35%, 8.75% 89.92%, 10.16% 89.64%, 11.67% 89.36%, 13% 89.16%, 14.08% 88.97%, 15.25% 88.8%, 16.58% 88.62%, 17.92% 88.47%, 19.17% 88.33%, 20.33% 88.2%, 21.58% 88.16%, 22.83% 88.11%, 23.92% 88.07%, 25.17% 88.09%, 26.67% 88.12%, 27.75% 88.16%, 28.92% 88.2%, 30.17% 88.3%, 31.34% 88.38%, 32.59% 88.45%, 34% 88.59%, 35.33% 88.71%, 36.75% 88.90%, 38.16% 89.18%, 39.5% 89.4%, 40.67% 89.67%, 41.66% 89.89%, 42.58% 90.11%, 43.5% 90.36%, 44.5% 90.68%, 45.67% 91%, 46.83% 91.31%, 47.92% 91.63%, 48.83% 91.88%, 49.67% 92.18%, 50.67% 92.48%, 51.67% 92.77%, 52.58% 93.08%, 53.42% 93.38%, 54.25% 93.69%, 55.17% 93.95%, 56.17% 94.28%, 57.16% 94.6%, 58.17% 94.96%, 59.08% 95.29%, 60% 95.65%, 60.92% 95.97%, 61.84% 96.3%, 62.67% 96.55%, 63.67% 96.88%, 64.66% 97.22%, 65.59% 97.49%, 66.49% 97.75%, 67.41% 97.96%, 68.25% 98.17%, 69.17% 98.42%, 70.17% 98.67%, 71% 98.84%, 71.92% 99.05%, 73.08% 99.24%, 74.08% 99.44%, 75.09% 99.6%, 76% 99.71%, 76.91% 99.84%, 77.83% 99.87%, 78.83% 99.96%, 79.92% 99.98%, 81% 99.99%, 82.08% 99.93%, 83.08% 99.87%, 84% 99.81%, 84.92% 99.68%, 85.83% 99.54%, 86.83% 99.34%, 87.74% 99.11%, 88.58% 98.92%, 89.5% 98.62%, 90.33% 98.34%, 91.17% 98.07%, 92.08% 97.68%, 92.92% 97.33%, 93.59% 96.98%, 94.33% 96.63%, 95.08% 96.19%, 95.74% 95.77%, 96.41% 95.29%, 97% 94.93%, 97.5% 94.59%, 98.08% 94.17%, 98.75% 93.77%, 99.33% 93.34%, 100% 92.89%);
+}
+
+section.logo_titulo .container figure.letras-blancas {
+  position: absolute;
+  bottom: 32%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 300px;
+  width: 10%;
+}
+
+section.logo_titulo .container figure.letras-blancas img.desktop {
+  display: block;
+}
+
+section.logo_titulo .container figure.letras-blancas img.mobile {
+  display: none;
+}
+
+section.logo_titulo .container figure.titulo-img {
+  width: 100%;
+}
+
+section.logo_titulo .container figure.titulo-img img.desktop {
+  display: block;
+}
+
+section.logo_titulo .container figure.titulo-img img.mobile {
+  display: none;
+}
+
+/* SECCION 2 */
+section.travel_agency {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: block;
+}
+
+section.travel_agency div.curva {
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -22%);
+  width: 589px;
+}
+
+section.travel_agency div.curva figure {
+  max-width: 630px;
+  margin-bottom: 50px;
+}
+
+section.travel_agency div.curva h2 {
+  color: #3D3A37;
+  font-family: "Helvetica 65 Medium";
+  font-size: 30px;
+  line-height: 52px;
+  padding-left: 45px;
+}
+
+section.travel_agency div.curva h2.subtitle-two {
+  margin-bottom: 50px;
+  text-align: right;
+  position: relative;
+  padding-right: 40px;
+}
+
+section.travel_agency div.curva h2.subtitle-two::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 45px;
+  height: 3px;
+  width: 246px;
+  background: #D24D39;
+}
+
+section.travel_agency div.curva p {
+  color: #3D3A37;
+  font-family: "Helvetica 55 Roman";
+  font-size: 20px;
+  line-height: 35px;
+  text-align: justify;
+  padding-left: 100px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+section.travel_agency div.curva p.first-child::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 33px;
+  height: 20px;
+  width: 20px;
+  background: #D24D39;
+  border-radius: 100%;
+}
+
+/*Seccion 3 */
+section.slider-bumming .info-slider h2 {
+  color: #000;
+  font-family: "Helvetica 65 Medium";
+  font-size: 60px;
+  line-height: 94px;
+  position: relative;
+}
+
+section.slider-bumming .info-slider h2:first-child {
+  margin-bottom: 160px;
+}
+
+section.slider-bumming .info-slider h2.estacion-principal {
+  cursor: pointer;
+  margin-bottom: 35px;
+  display: inline-block;
+  user-select: none;
+  outline: none;
+}
+
+section.slider-bumming .info-slider h2.estacion-principal::before {
+  content: 'NEW';
+  position: absolute;
+  top: -50px;
+  left: 0px;
+  height: 40px;
+  width: 130px;
+  background: #000;
+  color: #FFF;
+  font-family: "Helvetica 65 Medium";
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  line-height: 40px;
+  text-align: center;
+}
+
+section.slider-bumming .info-slider h2.cambioSpring::before {
+  background: #F3CA3E;
+  width: 90%;
+  content: 'COMING SOON';
+  text-align: left;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+section.slider-bumming .info-slider h2.cambioSummer::before {
+  background: #84CAFE;
+  width: 94%;
+  top: -35px;
+  content: 'NEW';
+  text-align: left;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+section.slider-bumming .info-slider h2.cambioFall::before {
+  background: #C16127;
+  width: 90%;
+  content: 'COMING SOON';
+  text-align: left;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+section.slider-bumming .info-slider h2.cambioWinter::before {
+  background: #5F6166;
+  width: 90%;
+  content: 'COMING SOON';
+  text-align: left;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+section.slider-bumming .container {
+  justify-content: space-between;
+}
+
+section.slider-bumming .container .info-slider {
+  width: 40%;
+  padding-bottom: 57px;
+  padding-left: 70px;
+}
+
+section.slider-bumming .container .imagen-slider {
+  width: 50%;
+  position: relative;
+}
+
+section.slider-bumming .container .imagen-slider.mobile {
+  display: none;
+}
+
+section.slider-bumming .container .imagen-slider.desktop {
+  display: block;
+}
+
+section.slider-bumming .container .imagen-slider figure {
+  position: absolute;
+  bottom: -40px;
+  max-width: 500px;
+}
+
+section.slider-bumming .container .imagen-slider figure.one-img {
+  opacity: 0.3;
+}
+
+section.slider-bumming .container .imagen-slider figure.summer,
+section.slider-bumming .container .imagen-slider figure.fall,
+section.slider-bumming .container .imagen-slider figure.winter,
+section.slider-bumming .container .imagen-slider figure.two-img {
+  display: none;
+}
+
+section.slider-bumming .info-slider ul {
+  display: flex;
+  list-style: none;
+}
+
+section.slider-bumming .info-slider ul li {
+  color: #000;
+  font-family: "Helvetica 65 Medium";
+  font-size: 18px;
+  letter-spacing: 4.5px;
+  line-height: 21px;
+  text-align: justify;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+section.slider-bumming .info-slider ul li.list-sum {
+  margin-right: 60px;
+}
+
+section.slider-bumming {
+  margin-bottom: 550px;
+}
+
+/*Seccion 4 */
+section.programs {
+  margin-bottom: 75px;
+}
+
+section.programs .container {
+  background: #B9BAAB;
+  flex-direction: column;
+  padding: 60px;
+}
+
+section.programs .container div.titulo-programs {
+  display: flex;
+  position: relative;
+  margin-bottom: 200px;
+}
+
+section.programs .container h2 {
+  color: #FFF;
+  font-family: "Helvetica 65 Medium";
+  font-size: 60px;
+  line-height: 80px;
+  width: 40%;
+}
+
+section.programs .container .titulo-programs figure {
+  width: 60%;
+  position: absolute;
+  top: -405px;
+  right: 0;
+}
+
+section.programs .container div.imagenes-programs {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+section.programs .container div.imagenes-programs.final {
+  justify-content: flex-start;
+}
+
+section.programs .container div.imagenes-programs figure {
+  margin-right: 70px;
+  min-width: 120px;
+  max-width: 175px;
+}
+
+section.programs .container div.imagenes-programs figure.last-child {
+  margin-right: 0;
+}
+
+/* FOOTER */
+footer .info-contacto {
+  width: 35%;
+}
+
+footer .img-info_contacto {
+  width: 65%;
+  position: relative;
+}
+
+footer .img-info_contacto figure {
+  position: relative;
+}
+
+footer .img-info_contacto figure.first {
+  position: absolute;
+  background: #D24D39;
+  border-radius: 100%;
+  width: 300px;
+  height: 300px;
+  padding-left: 27px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  top: -147px;
+  left: 23%;
+}
+
+footer .img-info_contacto figure.first img {
+  width: 50%;
+}
+
+footer .info-contacto div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 55px;
+}
+
+footer .info-contacto div figure {
+  margin-right: 60px;
+  width: 75px;
+}
+
+footer .info-contacto div.ig-contact span {
+  margin-right: 74px;
+}
+
+footer .info-contacto div.ig-contact a {
+  letter-spacing: 7px;
+}
+
+footer .info-contacto div span {
+  margin-right: 70px;
+  color: #D24D39;
+  font-weight: 100;
+}
+
+footer .info-contacto div.first span {
+  margin-right: 64px;
+}
+
+footer .info-contacto div a {
+  color: #5B5B5B;
+  font-family: "Helvetica 55 Roman";
+  font-size: 30px;
+  line-height: 50px;
+  text-align: justify;
+}
+
+footer .info-contacto div a.phone {
+  letter-spacing: 1px;
+}
+
+footer .img-info_contacto .banda-social {
+  position: absolute;
+  width: 100%;
+  border: 1px solid red;
+  bottom: 5px;
+  left: -3px;
+  background: #D24D39;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer .img-info_contacto .banda-social figure {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+footer .img-info_contacto .banda-social p {
+  color: #FFF;
+  font-family: "Helvetica 55 Roman";
+  font-size: 10px;
+  letter-spacing: 5px;
+  line-height: 15px
+}
+
+/************** SUMMER PAGE ************/
+section.titulo-estacion {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+section.titulo-estacion .container {
+  padding-left: 130px;
+}
+
+section.titulo-estacion div.description {
+  width: 50%;
+}
+
+section.titulo-estacion div.description h2 {
+  color: #000;
+  font-family: "Helvetica 55 Roman";
+  font-size: 48px;
+  letter-spacing: 25px;
+  line-height: 71px;
+}
+
+section.titulo-estacion div.titulo {
+  width: 50%;
+}
+
+section.titulo-estacion div.titulo h1::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 0px;
+  height: 35px;
+  width: 75%;
+}
+
+section.titulo-estacion div.titulo h1.summer::before {
+  background: #84CAFE;
+}
+
+section.titulo-estacion div.titulo h1.spring::before {
+  background: #F3CA3E;
+}
+
+section.titulo-estacion div.titulo h1.fall::before {
+  background: #C16127;
+}
+
+section.titulo-estacion div.titulo h1.fall::before {
+  background: #C16127;
+}
+
+section.titulo-estacion div.titulo h1.winter::before {
+  background: #5F6166;
+}
+
+section.titulo-estacion div.titulo h1 {
+  /*color: #CF412B;*/
+  font-family: "Helvetica 65 Medium";
+  font-size: 60px;
+  letter-spacing: 24.5px;
+  line-height: 115px;
+  text-align: justify;
+  position: relative;
+}
+
+section.titulo-estacion div.titulo p {
+  color: #000;
+  font-family: "Helvetica 55 Roman";
+  font-size: 25px;
+  line-height: 40px;
+}
+
+section.imagen-estacion {
+  margin-bottom: 200px;
+}
+
+section.imagen-estacion figure {
+  margin: 0 auto;
+}
+
+section.listado-detail {
+  margin-bottom: 200px;
+}
+
+section.listado-detail div.container {
+  /*background: red*/
+  ;
+  display: flex;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+section.listado-detail div.container div.container-img {
+  width: 50%;
+  padding-bottom: 35px;
+}
+
+section.listado-detail div.container div.conta-viemore {
+  width: 50%;
+}
+
+section.listado-detail div.container figure {
+  height: 250.49px;
+  width: 170.67px;
+  margin: 0 auto;
+  position: relative;
+}
+
+section.listado-detail div.container figure img {
+  width: 112.4px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section.listado-detail div.container div.conta-viemore div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+section.listado-detail div.container div.conta-viemore div p {
+  color: #FFF;
+  font-family: "Helvetica 55 Roman";
+  font-size: 30px;
+  line-height: 56px;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 30px;
+}
+
+section.listado-detail div.container div.conta-viemore div p.ultimo {
+  padding-right: 70px;
+}
+
+section.listado-detail div.container div.conta-viemore div p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #D24D39;
+  z-index: -1;
+}
+
+section.listado-detail div.container div.conta-viemore div h2 {
+  color: #000;
+  font-family: "Helvetica 55 Roman";
+  font-size: 67px;
+  letter-spacing: 19px;
+  line-height: 103px;
+}
+
+section.listado-detail div.container div.conta-viemore>p {
+  color: #666;
+  font-family: Verdana;
+  font-size: 16px;
+  line-height: 29px;
+  margin-bottom: 25px;
+}
+
+section.listado-detail div.container div.conta-viemore a {
+  color: #000;
+  font-family: "Helvetica 55 Roman";
+  font-size: 22px;
+  letter-spacing: 5.25px;
+  line-height: 33px;
+}
+
+section.menu-estaciones {
+  margin-bottom: 350px;
+}
+
+section.menu-estaciones div ul {
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+}
+
+section.menu-estaciones div ul li {
+  margin-right: 60px;
+}
+
+section.menu-estaciones div ul li a {
+  color: #000;
+  font-family: "Helvetica 65 Medium";
+  font-size: 18px;
+  letter-spacing: 4.5px;
+  line-height: 21px;
+  text-align: justify;
+  cursor: pointer;
+}
+
+section.menu-estaciones div ul li.active a {
+  color: #D24D39;
+  position: relative;
+}
+
+section.menu-estaciones div ul li.active a::before {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: #D24D39;
+  position: absolute;
+  bottom: -8px;
+}
+
+/************** SUMMER PAGE \ ************/
+/************** EAT -- WHERE  ************/
+section.eat_titulo {
+  margin-top: 84px;
+  margin-bottom: 200px;
+}
+
+section.eat_titulo .container {
+  position: relative;
+  clip-path: polygon(100% 0px, 0px 0px, -2px 92.56%, 0.83% 92.26%, 1.83% 91.9%, 2.92% 91.53%, 4.33% 91.09%, 5.75% 90.71%, 7.25% 90.35%, 8.75% 89.92%, 10.16% 89.64%, 11.67% 89.36%, 13% 89.16%, 14.08% 88.97%, 15.25% 88.8%, 16.58% 88.62%, 17.92% 88.47%, 19.17% 88.33%, 20.33% 88.2%, 21.58% 88.16%, 22.83% 88.11%, 23.92% 88.07%, 25.17% 88.09%, 26.67% 88.12%, 27.75% 88.16%, 28.92% 88.2%, 30.17% 88.3%, 31.34% 88.38%, 32.59% 88.45%, 34% 88.59%, 35.33% 88.71%, 36.75% 88.90%, 38.16% 89.18%, 39.5% 89.4%, 40.67% 89.67%, 41.66% 89.89%, 42.58% 90.11%, 43.5% 90.36%, 44.5% 90.68%, 45.67% 91%, 46.83% 91.31%, 47.92% 91.63%, 48.83% 91.88%, 49.67% 92.18%, 50.67% 92.48%, 51.67% 92.77%, 52.58% 93.08%, 53.42% 93.38%, 54.25% 93.69%, 55.17% 93.95%, 56.17% 94.28%, 57.16% 94.6%, 58.17% 94.96%, 59.08% 95.29%, 60% 95.65%, 60.92% 95.97%, 61.84% 96.3%, 62.67% 96.55%, 63.67% 96.88%, 64.66% 97.22%, 65.59% 97.49%, 66.49% 97.75%, 67.41% 97.96%, 68.25% 98.17%, 69.17% 98.42%, 70.17% 98.67%, 71% 98.84%, 71.92% 99.05%, 73.08% 99.24%, 74.08% 99.44%, 75.09% 99.6%, 76% 99.71%, 76.91% 99.84%, 77.83% 99.87%, 78.83% 99.96%, 79.92% 99.98%, 81% 99.99%, 82.08% 99.93%, 83.08% 99.87%, 84% 99.81%, 84.92% 99.68%, 85.83% 99.54%, 86.83% 99.34%, 87.74% 99.11%, 88.58% 98.92%, 89.5% 98.62%, 90.33% 98.34%, 91.17% 98.07%, 92.08% 97.68%, 92.92% 97.33%, 93.59% 96.98%, 94.33% 96.63%, 95.08% 96.19%, 95.74% 95.77%, 96.41% 95.29%, 97% 94.93%, 97.5% 94.59%, 98.08% 94.17%, 98.75% 93.77%, 99.33% 93.34%, 100% 92.89%);
+}
+
+section.eat_titulo .container figure.eat-img {
+  position: relative;
+}
+
+section.eat_titulo .container figure.eat-img .lienzo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-top: 19%;
+  padding-left: 16%;
+}
+
+section.eat_titulo .container figure.eat-img .lienzo p {
+  color: #FFF;
+  font-family: "Helvetica 55 Roman";
+  font-size: 40px;
+  letter-spacing: 22px;
+  line-height: 59px;
+}
+
+section.eat_titulo .container figure.eat-img .lienzo p.first {
+  margin-bottom: 30px;
+}
+
+section.eat_titulo .container figure.eat-img .lienzo div.container-last {
+  margin-bottom: 155px;
+  background: #D24D39;
+  padding-left: 10px;
+  height: 55px;
+  width: 640px;
+}
+
+section.eat_titulo .container figure.eat-img .lienzo h1 {
+  color: #FFF;
+  font-family: "Helvetica 65 Medium";
+  font-size: 70px;
+  letter-spacing: 30px;
+  line-height: 85px;
+  text-align: justify;
+  margin-bottom: 100px;
+}
+
+section.eat_titulo .container figure.eat-img .lienzo figure.forch-logo {
+  height: 18px;
+  width: 310px;
+}
+
+section.eat-description .container {
+  max-width: 900px;
+}
+
+section.eat-description .titulo-platillo {
+  margin-bottom: 100px;
+}
+
+section.eat-description .titulo-platillo h2 {
+  color: #000;
+  font-family: "Helvetica 65 Medium";
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 18px;
+  line-height: 40px;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+section.eat-description .container.eat-platillo p,
+section.eat-description .container.titulo-platillo p {
+  color: #000;
+  font-family: "Helvetica 55 Roman";
+  font-size: 17px;
+  text-align: justify;
+}
+
+section.eat-description .container.titulo-platillo p,
+section.eat-description .container.eat-platillo p {
+  width: 40%;
+}
+
+section.eat-description .titulo-platillo {
+  justify-content: flex-start;
+}
+
+section.eat-description .eat-platillo {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 150px;
+}
+
+section.eat-description .eat-platillo figure {
+  width: 50%;
+}
+
+section.eat-description .container-fundador {
+  justify-content: center;
+  margin-bottom: 200px;
+}
+
+section.eat-description .container .eat-fundador {
+  width: 50%;
+  position: relative;
+  padding-left: 75px;
+}
+
+section.eat-description .container .eat-fundador h2 {
+  color: #000;
+  font-family: "Helvetica 55 Roman";
+  font-size: 27px;
+  font-style: italic;
+  line-height: 41px;
+  text-align: justify;
+}
+
+section.eat-description .container .eat-fundador figure {
+  position: absolute;
+  left: 35px;
+  top: -71px;
+}
+
+section.eat-description .container .eat-fundador div p {
+  color: #000;
+  font-family: "Helvetica 55 Roman";
+  font-size: 18px;
+  font-style: italic;
+  line-height: 21px;
+  text-align: justify;
+  width: auto;
+}
+
+section.eat-description .container .eat-fundador>div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 57px;
+}
+
+section.eat-description .container .eat-fundador div div {
+  width: 170px;
+  height: 1px;
+  border: 1px solid #000;
+  margin-right: 10px;
+}
+
+section.eat-description .container .eat-localizacion {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 110px;
+}
+
+section.eat-description .container .eat-localizacion .cont-font {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+section.eat-description .container .eat-localizacion p {
+  width: auto;
+  color: #000;
+  font-family: "Helvetica 55 Roman";
+  font-size: 27px;
+  line-height: 45px;
+  text-align: justify;
+}
+
+section.eat-description .container .eat-localizacion i {
+  margin-right: 40px;
+}
+
+section.eat-description .container-tabs div {
+  width: 205px;
+}
+
+section.eat-description .container-tabs div.active-border {
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+section.eat-description .container-tabs a {
+  color: #000;
+  font-family: "Helvetica 55 Roman";
+  font-size: 26px;
+  line-height: 56px;
+  text-align: center;
+  display: block;
+}
+
+section.eat-description .container-tabs {
+  justify-content: center;
+}
+
+section.eat-description {
+  margin-bottom: 50px;
+}
+
+a.web-site {
+  font-family: "Helvetica 55 Roman";
+  font-size: 18px;
+  font-style: italic;
+  line-height: 21px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
+
+/** Estilos **/
+.ft-25 {
+  font-size: 25px;
+  letter-spacing: 0px !important;
+}
+
+/************** EAT -- WHERE \ ************/
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  section.programs .container div.imagenes-programs figure {
+    margin-bottom: 40px;
+  }
+
+  section.programs .container .titulo-programs figure {
+    top: -290px;
+  }
+
+  footer .img-info_contacto figure.first {
+    left: 21%;
+  }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+  section.programs .container div.imagenes-programs figure {
+    margin-bottom: 40px;
+  }
+
+  section.programs .container .titulo-programs figure {
+    top: -250px;
+  }
+
+  footer .info-contacto div a {
+    font-size: 25px;
+  }
+
+  footer .info-contacto div.ig-contact a {
+    letter-spacing: 5px;
+  }
+
+  footer .img-info_contacto figure.first {
+    left: 17%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  section.programs .container h2 {
+    font-size: 45px;
+  }
+
+  section.programs .container .titulo-programs figure {
+    top: -195px;
+  }
+
+  section.programs .container div.titulo-programs {
+    margin-bottom: 120px;
+  }
+
+  section.programs .container div.imagenes-programs figure {
+    margin-bottom: 40px;
+  }
+
+  /* FOOTER */
+  footer .container {
+    flex-direction: column;
+  }
+
+  footer .info-contacto {
+    min-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+  }
+
+  footer .info-contacto div {
+    justify-content: flex-start;
+  }
+
+  footer .img-info_contacto {
+    width: 100%;
+    position: relative;
+  }
+
+  footer .img-info_contacto figure.first {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  footer .img-info_contacto figure.first {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  footer .info-contacto div a {
+    font-size: 25px;
+    text-transform: uppercase;
+  }
+
+  footer .img-info_contacto .banda-social {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  footer .info-contacto div.ig-contact a {
+    letter-spacing: 5px;
+  }
+
+  /********* SECCION **********/
+  section.slider-bumming {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section.slider-bumming .container .info-slider {
+    padding: 0;
+    margin-bottom: 70px;
+  }
+
+  section.slider-bumming .info-slider h2:first-child {
+    margin-bottom: 120px;
+  }
+
+  /************** SUMMER PAGE ************/
+  section.titulo-estacion .container {
+    flex-direction: column;
+  }
+
+  section.titulo-estacion div.description {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  section.titulo-estacion div.titulo {
+    width: 100%;
+  }
+
+  section.titulo-estacion div.titulo h1 {
+    display: inline-block;
+  }
+
+  section.titulo-estacion div.description h2 {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header .flex {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  header .container a figure {
+    width: 70%;
+  }
+
+  .global-menu__item.is-opened {
+    line-height: 42px;
+  }
+
+  .global-menu__item {
+    font-size: 1.5rem !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* SECCION 1 */
+  section.travel_agency {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section.travel_agency div.curva {
+    transform: translate(-50%, -10%);
+  }
+
+  section.logo_titulo .container figure.letras-blancas {
+    width: 21%;
+  }
+
+  section.travel_agency div.curva h2.subtitle-two::before {
+    top: 30px;
+    left: 10px;
+    width: 25%;
+  }
+
+  section.travel_agency div.curva p {
+    padding: 0;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  section.travel_agency div.curva p br {
+    display: none;
+  }
+
+  section.travel_agency div.curva h2.subtitle-two {
+    padding: 0;
+    text-align: right;
+  }
+
+  section.travel_agency div.curva h2 {
+    padding: 0;
+    text-align: left;
+    font-size: 26px;
+  }
+
+  section.travel_agency div.curva p.first-child::before {
+    display: none;
+  }
+
+  section.logo_titulo .container figure.titulo-img img.desktop {
+    display: none;
+  }
+
+  section.logo_titulo .container figure.titulo-img img.mobile {
+    display: block;
+  }
+
+  /* SECCION 2 */
+  section.slider-bumming .container {
+    flex-direction: column;
+  }
+
+  section.slider-bumming .container .imagen-slider,
+  section.slider-bumming .container .info-slider {
+    width: 100%;
+  }
+
+  section.slider-bumming .container .info-slider {
+    padding: 0;
+    margin-bottom: 70px;
+  }
+
+  section.slider-bumming .container .imagen-slider figure {
+    position: relative;
+  }
+
+  section.slider-bumming .container .imagen-slider.mobile {
+    display: block;
+    margin-bottom: 130px;
+  }
+
+  section.slider-bumming .container .imagen-slider.desktop {
+    display: none;
+  }
+
+  section.slider-bumming {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 170px;
+    position: relative;
+  }
+
+  section.slider-bumming .info-slider h2 {
+    font-size: 37px;
+  }
+
+  section.slider-bumming .info-slider h2:first-child {
+    margin-bottom: 20px;
+    line-height: 50px;
+  }
+
+  section.slider-bumming .info-slider ul li.list-sum {
+    font-size: 16px;
+    margin-right: 35px;
+  }
+
+  section.slider-bumming .info-slider ul li.spring {
+    text-decoration: underline #F3CA3E;
+  }
+
+  section.slider-bumming .info-slider ul li.winter {
+    text-decoration: underline #5F6166;
+  }
+
+  section.slider-bumming .info-slider ul li.fall {
+    text-decoration: underline #C16127;
+  }
+
+  section.slider-bumming .info-slider ul li {
+    font-size: 16px;
+  }
+
+  /* SECCION 3 */
+  section.programs .container h2 {
+    font-size: 45px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: -50px;
+  }
+
+  section.programs .container .titulo-programs figure {
+    width: 100%;
+    position: relative;
+    top: -115px;
+  }
+
+  section.programs .container div.titulo-programs {
+    flex-direction: column-reverse;
+    margin-bottom: 20px;
+  }
+
+  section.programs .container {
+    padding: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*padding-top: 40px;*/
+  }
+
+  section.programs .container div.imagenes-programs {
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+
+  section.programs .container div.imagenes-programs figure {
+    margin-right: 0;
+    margin-bottom: 60px;
+  }
+
+  /* FOOTER */
+  footer .container {
+    flex-direction: column;
+  }
+
+  footer .info-contacto {
+    min-width: 355px;
+    padding-left: 50px;
+    padding-right: 20px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+  }
+
+  footer .img-info_contacto {
+    width: 100%;
+    position: relative;
+  }
+
+  footer .info-contacto div {
+    justify-content: flex-start;
+  }
+
+  footer .img-info_contacto figure.first {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  footer .img-info_contacto figure.first {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  footer .info-contacto div a {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  footer .img-info_contacto .banda-social {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  footer .info-contacto div.ig-contact a {
+    letter-spacing: 3px;
+  }
+
+  footer .info-contacto div.first span {
+    margin-right: 36px;
+  }
+
+  footer .info-contacto div.ig-contact span {
+    margin-right: 36px;
+  }
+
+  footer .info-contacto div span {
+    margin-right: 36px;
+  }
+
+  /************** SUMMER PAGE ************/
+  section.titulo-estacion .container {
+    padding: 0;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section.titulo-estacion div.description {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  section.titulo-estacion div.titulo {
+    width: 100%;
+  }
+
+  section.titulo-estacion div.description h2 {
+    font-size: 30px;
+    letter-spacing: 20px;
+  }
+
+  section.titulo-estacion div.titulo h1 {
+    font-size: 30px;
+    display: inline-block;
+  }
+
+  section.titulo-estacion div.titulo p {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  section.titulo-estacion div.titulo p br {
+    display: none;
+  }
+
+  section.titulo-estacion div.titulo h1::before {
+    top: 0px;
+    height: 20px;
+  }
+
+  section.imagen-estacion div.container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section.listado-detail div.container div.container-img {
+    width: 100%;
+  }
+
+  section.listado-detail div.container div.conta-viemore {
+    width: 100%;
+  }
+
+  section.listado-detail div.container {
+    flex-direction: column;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  section.listado-detail div.container div.conta-viemore div {
+    /*justify-content: center;*/
+  }
+
+  section.listado-detail div.container div.conta-viemore>p {
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  section.listado-detail div.container div.conta-viemore a {
+    text-align: left;
+    display: block;
+  }
+
+  section.listado-detail div.container div.conta-viemore div p.ultimo {
+    padding-right: 30px;
+    font-size: 14px;
+  }
+
+  section.listado-detail div.container div.conta-viemore div h2 {
+    font-size: 37px;
+  }
+
+  section.listado-detail div.container div.conta-viemore div p {
+    font-size: 14px;
+  }
+
+  section.menu-estaciones div ul {
+    flex-direction: column;
+  }
+
+  section.menu-estaciones div ul li {
+    margin-bottom: 50px;
+  }
+
+  section.menu-estaciones {
+    margin-bottom: 200px;
+  }
+
+  /************** SUMMER PAGE \ ************/
+  /************** EAT -- WHERE  ************/
+  section.eat_titulo {
+    margin-bottom: 100px;
+  }
+
+  section.eat_titulo .container figure.eat-img {
+    width: 100%;
+  }
+
+  section.eat_titulo .container figure.eat-img img {
+    height: 100vh;
+  }
+
+  section.eat_titulo .container figure.eat-img .lienzo {
+    padding-top: 0;
+    padding-left: 20px;
+  }
+
+  section.eat_titulo .container figure.eat-img .lienzo p.first {
+    margin-bottom: 20px;
+    letter-spacing: 20px;
+  }
+
+  section.eat_titulo .container figure.eat-img .lienzo p {
+    font-size: 20px;
+    letter-spacing: 22px;
+    line-height: 40px;
+  }
+
+  section.eat_titulo .container figure.eat-img .lienzo div.container-last {
+    height: 40px;
+    margin-bottom: 50px;
+    width: 280px;
+  }
+
+  section.eat_titulo .container figure.eat-img .lienzo h1 {
+    font-size: 30px;
+    letter-spacing: 25px;
+    line-height: 40px;
+    margin-bottom: 40px;
+  }
+
+  section.eat-description .titulo-platillo h2 {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  section.eat-description .container.titulo-platillo p {
+    width: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  section.eat-description .titulo-platillo {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section.eat-description .eat-platillo {
+    flex-direction: column;
+  }
+
+  section.eat-description .eat-platillo {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section.eat-description .eat-platillo figure {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  section.eat-description .container.eat-platillo p {
+    width: 100%;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  section.eat-description .container-fundador {
+    flex-direction: column;
+  }
+
+  section.eat-description .container .eat-fundador {
+    width: 100%;
+    margin-bottom: 70px;
+  }
+
+  section.eat-description .container .eat-localizacion {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 38px;
+  }
+
+  section.eat_titulo .container figure.eat-img .lienzo figure.forch-logo {
+    display: none;
+  }
+
+  section.eat-description .container .eat-localizacion p {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  section.eat-description .container .eat-fundador {
+    padding-left: 45px;
+  }
+
+  section.eat-description .container .eat-fundador h2 {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  section.imagen-estacion {
+    margin-bottom: 80px;
+  }
+
+  /************** EAT -- WHERE \  ************/
+}
+
+@media (max-width: 760px) {
+  section.travel_agency div.curva figure {
+    max-width: 630px;
+    margin-bottom: 50px;
+    margin-top: 80px;
+  }
+
+  .ft-25 {
+    font-size: 24px;
+    letter-spacing: 0px !important;
+  }
+
+  section.slider-bumming .info-slider h2.estacion-principal {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  section.travel_agency div.curva h2.subtitle-two::before {
+    display: none;
+  }
+
+  .ft-25 {
+    font-size: 23px;
+    letter-spacing: 0px !important;
+  }
+
+  section.slider-bumming .info-slider ul li {
+    letter-spacing: 3.5px;
+  }
+
+  html,
+  body {
+    width: 106% !important;
+    height: 100%;
+  }
+}
